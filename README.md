@@ -15,13 +15,13 @@ chmod +x ~/wombats/run
 ### Add the command to your PATH
 ####  ZSH
 ```bash
-echo 'export PATH="$HOME/wombats/run:$PATH"' >> ~/.zshrc &&
+echo 'export PATH="$HOME/wombats:$PATH"' >> ~/.zshrc &&
 source ~/.zshrc  # Reload the configuration
 ```
 
 #### bash
 ```
-echo 'export PATH="$HOME/wombats/run:$PATH"' >> ~/.bash_profile
+echo 'export PATH="$HOME/wombats:$PATH"' >> ~/.bash_profile
 source ~/.bash_profile
 ```
 
