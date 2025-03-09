@@ -37,3 +37,8 @@ source ~/.bash_profile
     - run the billing template creation job
 - jobs
     - run php jobs, including invoice creation  
+
+## Example
+```bash
+run jobs
+```
