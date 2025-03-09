@@ -30,10 +30,10 @@ source ~/.bash_profile
 
 ## Available commands
 - app
- - open a console in the app container
+    - open a console in the app container
 - accounting
- - open a console in the accounting container
+    - open a console in the accounting container
 - billing
- - run the billing template creation job
+    - run the billing template creation job
 - jobs
- - run php jobs, including invoice creation  
+    - run php jobs, including invoice creation  
