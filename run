@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Define commands in an associative array for flexibility
+declare -A COMMANDS
+
+# Add commands
+COMMANDS["billing"]="docker compose exec -t apiaccounting ./scripts/run-flask-command.sh create-billing-periods-from-templates-all-tenants"
+COMMANDS["jobs"]="docker compose exec --user $(id -u) app bin/console jobdispatcher:dispatch"
+
+COMMANDS["accounting"]="docker compose exec -t apiaccounting /bin/bash -c \"export TERM=vt100;exec bash\""
+COMMANDS["php"]="docker compose exec -t app /bin/bash -c \"export TERM=vt100;exec bash\""
+
+# Check if the command exists
+if [[ -n "${COMMANDS[$1]}" ]]; then
+    bash -c "${COMMANDS[$1]}"
+else
+    echo "Usage: run <command>"
+    echo "Available commands:"
+    for key in "${!COMMANDS[@]}"; do
+        eval "  $key"
+    done
+    exit 1
+fi
+
