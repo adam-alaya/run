@@ -7,6 +7,11 @@ This is an extensible runner for command commands to do common things such as ru
 git clone git@github.com:adam-alaya/run.git ~/wombats/
 ```
 
+### Ensure the script is executable
+```bash
+chmod +x ~/wombats/run
+```
+
 ### Add the command to your PATH
 ####  ZSH
 ```bash
@@ -19,3 +24,16 @@ source ~/.zshrc  # Reload the configuration
 echo 'export PATH="$HOME/wombats/run:$PATH"' >> ~/.bash_profile
 source ~/.bash_profile
 ```
+
+## Usage
+```run <command```
+
+## Available commands
+- app
+ - open a console in the app container
+- accounting
+ - open a console in the accounting container
+- billing
+ - run the billing template creation job
+- jobs
+ - run php jobs, including invoice creation  
